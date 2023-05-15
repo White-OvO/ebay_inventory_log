@@ -36,4 +36,6 @@ JAVA initialized Maven building executable JAR , Tomcat runs the web app .
 		</h1>
 		##
 <img width="626" alt="Screenshot 2023-05-04 221334" src=<img width="244" alt="Screenshot 2023-05-13 134128" src="https://github.com/White-OvO/EbayInventoryBackEnd/assets/120700219/d0e9845c-dbea-4b3e-97ff-ee09f6752c56">
+##
 
+<img width="270" alt="Screenshot 2023-05-14 214951" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/7f1ba786-2ed0-4dbc-90a7-6df3b0998bbf">
