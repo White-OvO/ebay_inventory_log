@@ -27,10 +27,14 @@ JAVA initialized Maven building executable JAR , Tomcat runs the web app .
 </h1>
 	##
 	<h1>Summary: 
-		ERD Diagtam
+		ERD Diagram
 		</h1>
-<img width="626" alt="Screenshot 2023-05-04 221334" src=https://github.com/White-OvO/EbayInventoryBackEnd/assets/120700219/716b1c62-6ad5-468b-9ce0-c48555ad54e8">
 
+	
+<img width="626" alt="Screenshot 2023-05-04 221334" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/e03ff49e-51f4-4733-8eec-e07f302828ec.png">
+
+	
+	
 	
 		POM 
 		
