@@ -23,10 +23,16 @@ public class DefaultTransactionsService implements TransactionsService {
 	public List<Transactions> fetchAllTransactions() {
 		List<Transactions> transactions = transactionsDao.fetchAllTransactions();
 		if(transactions.isEmpty()) {
-			String msg = String.format("there are no transactions");
+			String msg = String.format("there are no transactions: to fix create a transaction.");
 			throw new NoSuchElementException(msg);
 		}
 		return transactions;
+	}
+
+	@Override
+	public void deleteTransaction(int transactionsId) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

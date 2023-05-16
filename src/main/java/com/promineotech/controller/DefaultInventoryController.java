@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.promineotech.entity.Category;
+import com.promineotech.entity.Customer;
 import com.promineotech.entity.Inventory;
 import com.promineotech.service.InventoryService;
 
@@ -28,8 +30,34 @@ public class DefaultInventoryController implements InventoryController{
 	public List<Inventory> fetchAllInventory(){
 		return inventoryService.fetchAllInventory();
 	}
-	
-}
-	
-	
 
+
+	@Override
+	public Inventory createInventory(Category category, int itemNumber,
+			String itemName, int amountAvaliable, String sellerName) {
+		return inventoryService.createInventory(category, itemNumber, itemName, amountAvaliable, sellerName);
+	}
+	@Override
+	public void deleteInventory(int inventoryId) {
+		log.debug("inventoryId={}", inventoryId);
+		inventoryService.deleteInventory(inventoryId);
+
+	}
+
+
+
+	@Override
+	public Customer updateCustomer(int customerId, String updatedCustomer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+
+
+}
+
+	
+	

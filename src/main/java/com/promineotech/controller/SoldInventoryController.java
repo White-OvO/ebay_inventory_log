@@ -28,7 +28,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
 public interface SoldInventoryController {
 	
 	@Operation(
-		summary = "Create an invoice",
+		summary = "Return a list of inventory",
 		description = "Retruns the created sold list",
 		responses = {
 			@ApiResponse(

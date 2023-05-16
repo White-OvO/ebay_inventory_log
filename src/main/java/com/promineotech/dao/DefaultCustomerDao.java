@@ -40,9 +40,7 @@ public class DefaultCustomerDao implements CustomerDao{
 				+"FROM customer";
 		
 		Map<String, Object> params = new HashMap<>();
-		
-
-		
+	
 		return jdbcTemplate.query(sql, params, new RowMapper<>() {
 	
 		
@@ -67,14 +65,13 @@ public Customer createCustomer(String Ebay_username) {
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		params.sql = ""
 			+ "INSERT into customer"
-			+ "(customer_Id, Ebay_username)"
-		    + "VALUES (:customer_id, :Ebay_username)"; 
+			+ "(Ebay_username)"
+		    + "VALUES (:Ebay_username)"; 
 	   params.source.addValue("Ebay_username", Ebay_username);
 	   
 	   jdbcTemplate.update(params.sql, params.source, keyHolder);
 		return Customer.builder()
 				//.customerId(KeyHolder.getKey().intValue())
-				.customerId(keyHolder.getKey().intValue())
 				.EbayUsername(Ebay_username)
 				.build();
 	
@@ -91,11 +88,10 @@ public Customer createCustomer(String Ebay_username) {
 	
 	public Customer updateCustomer(int customerId, String updatedCustomer) {
 		String sql = ""
-				+ "UDPATE customer"
-				+"SET "
-				+"customer_id = :customer_id,"
-				+"Ebay_username = :Ebay_username"
-				+"WHERE customer_id = :customer_id; ";
+				+ "UPDATE customer"
+				+" SET "
+				+"Ebay_username = :Ebay_username "
+				+"WHERE customer_id = :customer_id ";
 		
 		
 		// is my Ebay_username correct ????????????????????????????????????????????????????
@@ -109,7 +105,7 @@ public Customer createCustomer(String Ebay_username) {
 			throw new NoSuchElementException("failed to update customer");
 		}
 		return Customer.builder()	
-				.customerId(customerId)
+			//	.customerId(customerId)
 				.EbayUsername(updatedCustomer)
 				.build();
 	}
@@ -118,8 +114,8 @@ public Customer createCustomer(String Ebay_username) {
 	@Override
 	public void deleteCustomer(int deleteId) {
 		String sql = ""
-				+ "DELETE FROM customers "
-				+ "WHERE customer_id = :customer_id;";
+				+ "DELETE FROM customer "
+				+ "WHERE customer_id = :customer_id";
 			
 			Map<String, Object> params = new HashMap<>();
 			

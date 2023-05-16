@@ -47,7 +47,7 @@ public class DefaultTransactionsDao implements TransactionsDao{
 			@Override
 			public Transactions mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return Transactions.builder()
-						.transaction_id(rs.getInt("transaction_id"))
+						//.transaction_id(rs.getInt("transaction_id"))
 						.customer_id(rs.getInt("customer_id"))
 						.date_sold(rs.getDate("date_sold"))
 						.buyer_paid(rs.getBigDecimal("buyer_paid"))

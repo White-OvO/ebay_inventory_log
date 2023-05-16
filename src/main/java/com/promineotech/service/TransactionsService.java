@@ -10,4 +10,8 @@ public interface TransactionsService {
 	
 	
 	public List<Transactions>fetchAllTransactions();
+	
+	
+	
+	void deleteTransaction(int transactionsId);
 }

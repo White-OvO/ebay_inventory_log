@@ -96,7 +96,7 @@ public interface CustomerController {
 			},
 			
 			parameters = {
-					@Parameter(name = "EbayUser",
+					@Parameter(name = "EbayUser name input for new customer-name",
 							allowEmptyValue = false,
 							required = false,
 							description = "The customers local Ebay-name"),

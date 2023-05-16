@@ -27,7 +27,7 @@ public class DefaultSoldInventoryService implements SoldInventoryService {
 	public List<SoldInventory> fetchAllSoldInventory() { 
 		List<SoldInventory> soldInventory = soldInventoryDao.fetchAllSoldInventory();
 		if(soldInventory.isEmpty()) { 
-			String msg = String.format("There are no oders as if this moment"); 
+			String msg = String.format("There are no orders as if this moment"); 
 			throw new NoSuchElementException(msg);
 			
 		}

@@ -31,5 +31,25 @@ public class DefaultInventoryService implements InventoryService {
 		}
 		return inventory;
 	}
+
+	@Override
+	public void deleteInventory(int inventoryId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Inventory createInventory(Enum Category, int itemNumber, String itemName, int amountAvaliable,
+			String sellerName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Inventory updateInventory(int inventoryId, Enum Category, int itemNumber, String itemName,
+			int amountAvaliable, String sellerName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

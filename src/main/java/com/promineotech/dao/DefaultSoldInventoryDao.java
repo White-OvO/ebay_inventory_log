@@ -42,7 +42,7 @@ public class DefaultSoldInventoryDao implements SoldInventoryDao {
 			// list ALL sold inventory
 		public SoldInventory mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return SoldInventory.builder()
-						.orderId(rs.getInt("order_id"))
+					//	.orderId(rs.getInt("order_id"))
 						.EbayOrderNumber(rs.getInt("Ebay_order_number"))
 						.transactionId(rs.getInt("transaction_id"))
 						.itemNumber(rs.getInt("item_number"))

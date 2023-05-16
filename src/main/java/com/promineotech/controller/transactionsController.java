@@ -37,7 +37,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
 public interface transactionsController {
 	
 	@Operation(
-		summary = "Create an invoice for a Transaction",
+		summary = "Returns a ist of  Transactions",
 		description = "Retruns the created Transaction",
 		responses = {
 			@ApiResponse(
