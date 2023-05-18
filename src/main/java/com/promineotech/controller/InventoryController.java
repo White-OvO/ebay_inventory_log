@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.promineotech.entity.Category;
-import com.promineotech.entity.Customer;
 import com.promineotech.entity.Inventory;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -146,10 +145,11 @@ public interface InventoryController {
 			)
 	
 
-    @PutMapping("/updatecustomer")
-//updating customer
+    @PutMapping("/updateinventory")
+
     @ResponseStatus(code = HttpStatus.OK)
-    Customer updateCustomer (int customerId, String updatedCustomer);
+    Inventory updateInventory(int inventoryId, Category category, int itemNumber,
+    		String itemName, int amountAvaliable, String sellerName);
 
 	@Operation(
 				summary = "Deletes an existing inventory-table",
@@ -177,10 +177,10 @@ public interface InventoryController {
 
 },
 	parameters = {
-				@Parameter (name = "customerId",
+				@Parameter (name = "inventoryId",
 				allowEmptyValue = false,
 				required = false,
-				description = "customerId (i.e., 2)"),
+				description = "inventoryId (i.e., 2)"),
 }
 )
 				

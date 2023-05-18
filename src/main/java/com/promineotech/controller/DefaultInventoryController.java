@@ -37,6 +37,19 @@ public class DefaultInventoryController implements InventoryController{
 			String itemName, int amountAvaliable, String sellerName) {
 		return inventoryService.createInventory(category, itemNumber, itemName, amountAvaliable, sellerName);
 	}
+
+	
+
+
+
+	@Override
+	public Inventory updateInventory(int inventoryId, Category category, int itemNumber,
+	String itemName, int amountAvaliable, String sellerName) {
+		return inventoryService.updateInventory(inventoryId,category,itemNumber,itemName,amountAvaliable,sellerName);
+
+	}
+
+
 	@Override
 	public void deleteInventory(int inventoryId) {
 		log.debug("inventoryId={}", inventoryId);
@@ -45,12 +58,6 @@ public class DefaultInventoryController implements InventoryController{
 	}
 
 
-
-	@Override
-	public Customer updateCustomer(int customerId, String updatedCustomer) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
 

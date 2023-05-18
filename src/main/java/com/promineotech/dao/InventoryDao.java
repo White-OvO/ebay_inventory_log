@@ -1,7 +1,9 @@
 package com.promineotech.dao;
 
 import java.util.List;
+import java.util.Optional;
 
+import com.promineotech.entity.Category;
 import com.promineotech.entity.Inventory;
 
 public interface InventoryDao {
@@ -12,14 +14,15 @@ public interface InventoryDao {
 
 	 
 	 
-	 Inventory createInventory(Enum Category, int itemNumber,
+	Inventory createInventory(Category category, int itemNumber,
 				String itemName, int amountAvaliable, String sellerName);
 	 
-	 Inventory updateInventory(int inventoryId,Enum Category, int itemNumber,
+	 Inventory updateInventory(Category category, int itemNumber,
 				String itemName, int amountAvaliable, String sellerName);
 	 
 	 
 	 void deleteInventory(int inventoryId);
-	
+
+
 	
 }
