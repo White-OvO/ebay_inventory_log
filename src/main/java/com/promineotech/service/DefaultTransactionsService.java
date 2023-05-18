@@ -30,10 +30,10 @@ public class DefaultTransactionsService implements TransactionsService {
 		}
 		return transactions;
 	}
-	public Transactions createTransactions(int transactionsId, int customerId, String dateSold,int buyerPaid, int taxesPerTransaction, 
+	public Transactions createTransactions(int customerId, String dateSold,int buyerPaid, int taxesPerTransaction, 
 										   int shippingCost, int sellerFee){
 		log.info("Creates transactions in Service");
-		return transactionsDao.createtransactions(transactionsId,customerId,dateSold,taxesPerTransaction,shippingCost,sellerFee);
+		return transactionsDao.createTransactions(customerId,dateSold,buyerPaid,taxesPerTransaction,shippingCost,sellerFee);
 		
 	}
 	
@@ -42,6 +42,6 @@ public class DefaultTransactionsService implements TransactionsService {
 		log.info("delete method was approved", transactionsId);
 		transactionsDao.deleteTransations(transactionsId);		
 	}
-	
+
 	
 }

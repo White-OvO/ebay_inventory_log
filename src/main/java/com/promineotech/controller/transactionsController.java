@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.promineotech.entity.Inventory;
 import com.promineotech.entity.Transactions;
 
 //import com.promineo.
@@ -35,7 +36,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
 @OpenAPIDefinition(info = @Info(title = "Transactions List"), servers = {
 		@Server(url = "http://localhost:8080", description = "Local server.")})
 
-public interface transactionsController {
+public interface TransactionsController {
 	
 	@Operation(
 		summary = "Returns a ist of  Transactions",
@@ -68,9 +69,74 @@ public interface transactionsController {
 			);
 	
 
+
+
+
+
+
+
+
+@Operation(
+		summary = "Creates a new transaction",
+		description = "Returns the created transaction item",
+		responses = {
+				@ApiResponse(
+						responseCode = "201",
+						description = "A new transaction has been added to the table",
+						content = @Content(
+								mediaType = "application/json",
+								schema = @Schema(implementation =Transactions.class))),
+				@ApiResponse(
+						responseCode = "400",
+						description = "The request parameters are invalid",
+						content = @Content(mediaType = "application/json")),
+				@ApiResponse(
+						responseCode = "404",
+						description = "No inventory were found.",
+						content = @Content(mediaType = "application/json")),
+	
+				@ApiResponse(
+						responseCode = "500",
+						description = "An unplanned error occured.",
+						content = @Content(mediaType = "application/json")),
+		}
+
+	)
+@PostMapping("/createTransactions")
+@ResponseStatus(code = HttpStatus.CREATED)	
+
+Transactions createTransactions(int customerId, String dateSold, int buyerPaid, int taxesPerTransaction,
+		int shippingCost, int sellerFee);
+
+
+
+
+
+
+
 @DeleteMapping("/deletetransactions")
 @ResponseStatus(code = HttpStatus.OK)
 	void deleteTransactions(int transactionsId);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 			  
 			

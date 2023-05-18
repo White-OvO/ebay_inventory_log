@@ -11,9 +11,17 @@ public interface TransactionsDao {
 // CRUD read for 
 	public  List<Transactions> fetchAllTransactions();
 
-	public Transactions createtransactions(int transactionsId, int customerId, String dateSold, int taxesPerTransaction,
+
+	Transactions createTransactions(int customerId, String dateSold, int buyerPaid, int taxesPerTransaction,
 			int shippingCost, int sellerFee);
 
-	public void deleteTransations(int transactionsId);
 	
+	
+	
+	public void deleteTransations(int transactionsId);
+
+
+
+
+
 }

@@ -1,26 +1,22 @@
 package com.promineotech.entity;
 
-import java.math.BigDecimal;
-import java.sql.Date;
-
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder
-
 //@Id
 //@GeneratedValue(strategy = GenerationType.IDENTITY)
 public class Transactions {
 	//@Id                                         //JPA entity must have a primary key that uniquely identifies it. The @Id annotation defines the primary key.
 	//@GeneratedValue(strategy = GenerationType.IDENTITY)         //(Optional) The primary key generation strategy that the persistence provider must use to generate the annotated entity primary key.
-private int	transactions_id;
-private int customer_id;
-private String date_sold;
-private int buyer_paid;           ///???????????????????????? big decimal or int? check default transaction line 53 also change to schema line 50
-private int taxes_per_transaction;			/// ????????? do i chaneg this to big decinal as well? refrence: default transactions DAO
-private int shipping_cost;
-private int seller_fee;
+private int	transactionsId;
+private int customerId;
+private String dateSold;
+private int buyerPaid;           ///???????????????????????? big decimal or int? check default transaction line 53 also change to schema line 50
+private int taxesPerTransaction;			/// ????????? do i chaneg this to big decinal as well? refrence: default transactions DAO
+private int shippingCost;
+private int sellerFee;
 //
 //	private Long transactionId;
 //
@@ -90,3 +86,5 @@ private int seller_fee;
 //		
 
 }
+
+

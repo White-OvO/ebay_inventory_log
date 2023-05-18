@@ -61,7 +61,7 @@ public class DefaultSoldInventoryDao implements SoldInventoryDao {
 		SqlParams params = new SqlParams();
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		
-		log.debug("DAO: inventory_id={},Ebay_order_number={},transaction_id={}",
+		log.debug("DAO: inventory_id={},Ebay_order_number={},transactions_id={}",
 		        inventoryId,EbayOrderNumber, transactionId);
 		
 	    params.sql = ""

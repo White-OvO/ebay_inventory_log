@@ -98,6 +98,6 @@ public interface SoldInventoryController {
 		)
 	@PostMapping("/createsoldinventory")
 	@ResponseStatus(code = HttpStatus.CREATED)
-				SoldInventory soldInventory(int inventoryId,int EbayOrderNumber, int transactionId);
+				SoldInventory soldInventory(int EbayOrderNumber, int transactionId,int itemNumber);
 }
 			  

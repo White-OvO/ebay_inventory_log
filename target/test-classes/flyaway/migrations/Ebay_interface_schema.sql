@@ -44,14 +44,14 @@ Select * from customer;
 -- THIS TABLE IS SO WE CAN HAUNT DOWN WHICH SHIPPING CARRIER WE NEED TO CHASE DOWN FOR INSURANCE MONEY
  -- transacations
 CREATE TABLE transactions(
- transaction_id INT AUTO_INCREMENT NOT NULL,
+ transactions_id INT AUTO_INCREMENT NOT NULL,
  customer_id INT,
  date_sold VARCHAR(100) NULL,
  buyer_paid INT ,
  taxes_per_transaction INT ,
  shipping_cost INT,
  seller_fee INT,
-  PRIMARY KEY (transaction_id),
+  PRIMARY KEY (transactions_id),
   FOREIGN KEY (customer_id) REFERENCES customer (customer_id) ON DELETE CASCADE
   
 );
