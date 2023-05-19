@@ -8,9 +8,14 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
 
+import com.promineotech.dao.DefaultCustomerDao.SqlParams;
+import com.promineotech.entity.Customer;
 import com.promineotech.entity.SoldInventory;
 
 import lombok.extern.slf4j.Slf4j;
@@ -52,6 +57,38 @@ public class DefaultSoldInventoryDao implements SoldInventoryDao {
 			
 			
 		});
+	}
+	@Override
+	public SoldInventory createSoldInventory(int EbayOrderNumber, int transactionId, int itemNumber) {
+		SqlParams params = new SqlParams();
+		KeyHolder keyHolder = new GeneratedKeyHolder();
+		String sql = ""
+			+ " INSERT into sold_inventory "
+			+ "( Ebay_order_number ),"
+			+ "( transaction_id ),"
+			+ "( item_number )"
+		    + "VALUES (:Ebay_order_number, :transaction_id, :item_number )"; 
+	   params.source.addValue("Ebay_order_number",EbayOrderNumber        );
+	   params.source.addValue("transaction_id", transactionId);									//transactions_id
+	   params.source.addValue("item_number", itemNumber);	
+	   
+	   
+	   
+	   
+	   jdbcTemplate.update (params.sql,params.source, keyHolder);
+		return SoldInventory.builder()		
+				.orderId(keyHolder.getKey().intValue())   
+				.EbayOrderNumber(EbayOrderNumber)
+				.transactionId(transactionId)
+				.itemNumber(itemNumber)
+				.build();
+	
+	}
+	
+	class SqlParams {
+		
+		String sql;
+		MapSqlParameterSource source = new MapSqlParameterSource();
 	}
 	
 	

@@ -8,7 +8,7 @@ public interface TransactionsDao {
 
 	
 	
-// CRUD read for transcations;
+// CRUD read for 
 	public  List<Transactions> fetchAllTransactions();
 	
 }

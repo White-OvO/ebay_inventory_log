@@ -8,11 +8,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.promineotech.entity.SoldInventory;
+
+import lombok.extern.slf4j.Slf4j;
+
 //import com.promineotech.dao.SoldInventoryDao;
 import com.promineotech.dao.SoldInventoryDao;
 @Service
 
-
+@Slf4j
 public class DefaultSoldInventoryService implements SoldInventoryService {
 
 	
@@ -32,5 +35,15 @@ public class DefaultSoldInventoryService implements SoldInventoryService {
 			
 		}
 		return soldInventory;
+	}
+
+
+	@Override
+	public SoldInventory createSoldInventory(int ebayOrderNumber, int transactionId, int itemNumber) {
+
+		log.info("Creates an invoice in Service");
+		//log.info("Creates an invoice in Service");
+		return soldInventoryDao.createSoldInventory(ebayOrderNumber,transactionId,itemNumber);
+		
 	}
 }

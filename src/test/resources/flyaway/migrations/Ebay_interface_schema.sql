@@ -45,12 +45,13 @@ Select * from customer;
  -- transacations
 CREATE TABLE transactions(
  transaction_id INT AUTO_INCREMENT NOT NULL,
- customer_id INT NOT NULL,
- date_sold DATE NULL,
- buyer_paid DECIMAL (4,2),
- taxes_per_transaction DECIMAL (4,2),
- shipping_cost DECIMAL(4,2),
- seller_fee DECIMAL(4,2),
+ customer_id INT N
+ OT NULL,
+ date_sold VARCHAR(100) NULL,
+ buyer_paid INT ,
+ taxes_per_transaction INT ,
+ shipping_cost INT,
+ seller_fee INT,
   PRIMARY KEY (transaction_id),
   FOREIGN KEY (customer_id) REFERENCES customer (customer_id) ON DELETE CASCADE
   
