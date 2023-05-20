@@ -39,11 +39,11 @@ public class DefaultSoldInventoryService implements SoldInventoryService {
 
 
 	@Override
-	public SoldInventory createSoldInventory(int ebayOrderNumber, int transactionId, int itemNumber) {
+	public SoldInventory createSoldInventory(int soldInventory,int ebayOrderNumber, int transactionId) {
 
 		log.info("Creates an invoice in Service");
 		//log.info("Creates an invoice in Service");
-		return soldInventoryDao.createSoldInventory(ebayOrderNumber,transactionId,itemNumber);
+		return soldInventoryDao.createSoldInventory(soldInventory,ebayOrderNumber,transactionId);
 		
 	}
 }

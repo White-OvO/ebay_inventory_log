@@ -68,12 +68,12 @@ public class DefaultInventoryDao implements InventoryDao{
 	
 }
 	@Override
-	public Inventory createInventory(Category category, int itemNumber,
+	public Inventory createInventory(Category categoryid, int itemNumber,
 			String itemName, int amountAvaliable, String sellerName) {
-			//SqlParams params = new SqlParams();
+			SqlParams params = new SqlParams();
 			KeyHolder keyHolder = new GeneratedKeyHolder();
 			   log.debug("DAO: category={},  item_number={},item_name={},amount_avaliable={}, seller_name={}",
-				        category, itemNumber, itemName, amountAvaliable, sellerName);
+				        categoryid, itemNumber, itemName, amountAvaliable, sellerName);
 			//Method one
 //			
 //			String sql = ""
@@ -90,25 +90,31 @@ public class DefaultInventoryDao implements InventoryDao{
 			
 			
 			 // @formatter:off
-		    String sql = ""
+		    params.sql = ""
 		        + "INSERT INTO inventory ("
 		        + "category_id, item_number, item_name, amount_avaliable, seller_name"
 		        + ") VALUES ("
-		        + ":category_id, :item_number, :item_name, :amount_avaliable, :seller_Name)";
+		        + ":category_id, :item_number, :item_name, :amount_avaliable, :seller_name)";
 		    // @formatter:on
-			
-			
+		   // params.source.addValue("category_id", categoryid.toString(),"item_number",itemNumber,"item_name", itemName,
+		    				// 		"amount_avaliable", amountAvaliable,"seller_name",sellerName);
+		    						params.source.addValue("category_id", categoryid.toString());
+		    						params.source.addValue("item_number", itemNumber);
+		   // 						params.source.addValue("item_number",itemNumber);
+		    						params.source.addValue("item_name", itemName);
+		    						params.source.addValue("amount_avaliable", amountAvaliable);
+		    						params.source.addValue("seller_name",sellerName);
 			////////// LINE 121 might be wrong
 			
 			
 			
-			Map<String, Object> params = new HashMap<>();
-			params.put("categoryId",category);
-			params.put("itemNumber",itemNumber);
-			params.put("itemName", itemName);
-			params.put("amountAvaliable", amountAvaliable);
-			params.put("sellerName",sellerName);
-			
+//			Map<String, Object> params = new HashMap<>();
+//			params.put("categoryId",categoryid);//params.source.addValue("category_id", categoryid.toString());
+//			params.put("itemNumber",itemNumber);
+//			params.put("itemName", itemName);
+//			params.put("amountAvaliable", amountAvaliable);
+//			params.put("sellerName",sellerName);
+//			
 			
 			///////////////			wrong params //////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////			
@@ -118,10 +124,11 @@ public class DefaultInventoryDao implements InventoryDao{
 //		
 			
 			
-			jdbcTemplate.update(sql, params);
-	//   jdbcTemplate.update(params.sql, params.source, keyHolder);
+	//		jdbcTemplate.update(sql, params);
+	   jdbcTemplate.update(params.sql, params.source, keyHolder);
 			return Inventory.builder()
-					.categoryId(category)
+					.inventoryId(keyHolder.getKey().intValue())
+					.categoryId(categoryid)
 					.itemNumber(itemNumber)
 					.itemName(itemName)
 					.amountAvaliable(amountAvaliable)

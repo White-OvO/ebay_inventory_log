@@ -14,13 +14,13 @@ import lombok.Data;
 public class Transactions {
 	//@Id                                         //JPA entity must have a primary key that uniquely identifies it. The @Id annotation defines the primary key.
 	//@GeneratedValue(strategy = GenerationType.IDENTITY)         //(Optional) The primary key generation strategy that the persistence provider must use to generate the annotated entity primary key.
-private int	transaction_id;
+private int	transactions_id;
 private int customer_id;
-private Date date_sold;
-private BigDecimal buyer_paid;           ///???????????????????????? big decimal or int? check default transaction line 53 also change to schema line 50
-private BigDecimal taxes_per_transaction;			/// ????????? do i chaneg this to big decinal as well? refrence: default transactions DAO
-private BigDecimal shipping_cost;
-private BigDecimal seller_fee;
+private String date_sold;
+private int buyer_paid;           ///???????????????????????? big decimal or int? check default transaction line 53 also change to schema line 50
+private int taxes_per_transaction;			/// ????????? do i chaneg this to big decinal as well? refrence: default transactions DAO
+private int shipping_cost;
+private int seller_fee;
 //
 //	private Long transactionId;
 //

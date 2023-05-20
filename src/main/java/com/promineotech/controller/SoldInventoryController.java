@@ -86,17 +86,18 @@ public interface SoldInventoryController {
 							responseCode = "500",
 							description = "An unplanned error occured.",
 							content = @Content(mediaType = "application/json")),
-			},
+			}
+//,
 			
-			parameters = {
-					@Parameter(name = "sold inventory data",
-							allowEmptyValue = false,
-							required = false,
-							description = "The inventory list for local transactions"),
-									}
+//			parameters = {
+//					@Parameter(name = "sold inventory data",
+//							allowEmptyValue = false,
+//							required = false,
+//							description = "The inventory list for local transactions"),
+//									}
 		)
 	@PostMapping("/createsoldinventory")
 	@ResponseStatus(code = HttpStatus.CREATED)
-				SoldInventory soldInventory(int EbayOrderNumber, int transactionId, int itemNumber);
+				SoldInventory soldInventory(int inventoryId,int EbayOrderNumber, int transactionId);
 }
 			  

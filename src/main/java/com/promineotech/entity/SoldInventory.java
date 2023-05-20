@@ -11,8 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SoldInventory {
 private int orderId;
+private int inventoryId;
 private int EbayOrderNumber;
 private int transactionId;
-private int itemNumber;
-
 }

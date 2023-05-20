@@ -45,8 +45,7 @@ Select * from customer;
  -- transacations
 CREATE TABLE transactions(
  transaction_id INT AUTO_INCREMENT NOT NULL,
- customer_id INT N
- OT NULL,
+ customer_id INT,
  date_sold VARCHAR(100) NULL,
  buyer_paid INT ,
  taxes_per_transaction INT ,

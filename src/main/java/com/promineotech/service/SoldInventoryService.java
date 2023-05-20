@@ -11,7 +11,7 @@ public interface SoldInventoryService {
 //CRUD Gets Inventoy
 	public List<SoldInventory> fetchAllSoldInventory() ;
 
-	public SoldInventory createSoldInventory(int ebayOrderNumber, int transactionId, int itemNumber);
+	public SoldInventory createSoldInventory(int soldInventory,int ebayOrderNumber, int transactionId);
 	
 	
 	

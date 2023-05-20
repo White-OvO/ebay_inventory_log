@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.promineotech.entity.Category;
+import com.promineotech.entity.Inventory;
 import com.promineotech.entity.Transactions;
 import com.promineotech.dao.TransactionsDao;
 
@@ -28,13 +30,18 @@ public class DefaultTransactionsService implements TransactionsService {
 		}
 		return transactions;
 	}
-
-	@Override
-	public void deleteTransaction(int transactionsId) {
-		// TODO Auto-generated method stub
+	public Transactions createTransactions(int transactionsId, int customerId, String dateSold,int buyerPaid, int taxesPerTransaction, 
+										   int shippingCost, int sellerFee){
+		log.info("Creates transactions in Service");
+		return transactionsDao.createtransactions(transactionsId,customerId,dateSold,taxesPerTransaction,shippingCost,sellerFee);
 		
 	}
 	
+	@Override
+	public void deleteTransaction(int transactionsId) {
+		log.info("delete method was approved", transactionsId);
+		transactionsDao.deleteTransations(transactionsId);		
+	}
 	
 	
 }

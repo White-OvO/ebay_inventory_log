@@ -91,14 +91,15 @@ public interface InventoryController {
 							responseCode = "500",
 							description = "An unplanned error occured.",
 							content = @Content(mediaType = "application/json")),
-			},
+			}
+//,
 			/////////////////////////////// is line 95 correct????????????????????????????????????
-			parameters = {
-					@Parameter(name = "EbayInventory",
-							allowEmptyValue = false,
-							required = false,
-							description = "The Ebay inventory-item name"),
-									}
+//			parameters = {
+//					@Parameter(name = "EbayInventory",
+//							allowEmptyValue = false,
+//							required = false,
+//							description = "The Ebay inventory-item name"),
+						//			}
 		)
 	@PostMapping("/createInventory")
 	@ResponseStatus(code = HttpStatus.CREATED)	

@@ -13,7 +13,6 @@ public interface SoldInventoryDao {
 	public List<SoldInventory> fetchAllSoldInventory();
 	
 	
-	SoldInventory createSoldInventory(int EbayOrderNumber, int transactionId,
-			int itemNumber);
+	SoldInventory createSoldInventory(int inventoryId,int EbayOrderNumber, int transactionId);
 	
 }
