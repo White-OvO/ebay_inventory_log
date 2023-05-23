@@ -55,6 +55,6 @@ Schema
 
 <img width="626" alt="Screenshot 2023-05-14 215449" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/caa3a84a-90b3-4a18-9390-f0e85372ffe4">
 
-## $`textcolor {red} {text {your text}}`$
+## $`textcolor {red} {text {EndPoints / CRUD }}`$
 
 <img width="654" alt="Screenshot 2023-05-22 211244" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/e38119d5-6f2a-4425-bd6c-3626f7889eb2">
