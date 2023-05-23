@@ -61,10 +61,22 @@ Schema
 
 
 
-<h1 style="background-color:DodgerBlue;"> Customer </h1>
+<h1 style="background-color:DodgerBlue;"> Inventory </h1>
 
 <img width="645" alt="Screenshot 2023-05-22 211546" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/57fe28b1-4f46-40d8-b653-50956f378a7e">
 
 <img width="631" alt="Screenshot 2023-05-22 212730" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/a1c956bc-3874-4d4f-8bc1-6ccf4bbde220">
 
 <img width="640" alt="Screenshot 2023-05-22 212831" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/c1552411-8c6a-446f-8a51-cde2762f5405">
+
+
+<h1 style="background-color:DodgerBlue;"> Customer </h1>
+
+
+<img width="638" alt="Screenshot 2023-05-22 214950" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/779acd7a-517d-4c08-ba2d-a019ab757409">
+<img width="636" alt="Screenshot 2023-05-22 215036" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/85f222f8-9860-45c5-9715-5aea2fd46132">
+<img width="636" alt="Screenshot 2023-05-22 215453" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/6181ece0-fc7e-47d3-945d-454a83ab6acb">
+<img width="643" alt="Screenshot 2023-05-22 215605" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/1316bda5-6b6c-4e7d-bc88-3873d5316d3d">
+<img width="638" alt="Screenshot 2023-05-22 215628" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/a9f0efcc-a31e-463a-be6e-b6b30da57592">
+
+
