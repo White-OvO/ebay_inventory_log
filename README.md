@@ -58,3 +58,13 @@ Schema
 <h1 style="background-color:DodgerBlue;"> CRUD / END POINTS</h1>
 
 <img width="654" alt="Screenshot 2023-05-22 211244" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/e38119d5-6f2a-4425-bd6c-3626f7889eb2">
+
+
+
+<h1 style="background-color:DodgerBlue;"> Customer </h1>
+
+<img width="645" alt="Screenshot 2023-05-22 211546" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/57fe28b1-4f46-40d8-b653-50956f378a7e">
+
+<img width="631" alt="Screenshot 2023-05-22 212730" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/a1c956bc-3874-4d4f-8bc1-6ccf4bbde220">
+
+<img width="640" alt="Screenshot 2023-05-22 212831" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/c1552411-8c6a-446f-8a51-cde2762f5405">
