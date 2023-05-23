@@ -90,3 +90,9 @@ Schema
 <img width="636" alt="Screenshot 2023-05-22 220319" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/272e1a6f-753b-4ece-b31f-185fd21d5e6e">
 
 
+<h1 style="background-color:DodgerBlue;"> SoldInventory </h1>
+
+
+<img width="638" alt="Screenshot 2023-05-22 222430" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/836497b6-8aba-4382-8045-6b16e25a766b">
+
+<img width="636" alt="Screenshot 2023-05-22 222535" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/f9aa6322-2b71-48a3-a839-2cbadc6bba36">
