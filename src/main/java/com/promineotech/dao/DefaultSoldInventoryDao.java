@@ -48,7 +48,7 @@ public class DefaultSoldInventoryDao implements SoldInventoryDao {
 					//	.orderId(rs.getInt("order_id"))
 						.inventoryId(rs.getInt("inventory_id"))
 						.EbayOrderNumber(rs.getInt("Ebay_order_number"))
-						.transactionId(rs.getInt("transaction_id"))
+						.transactionsId(rs.getInt("transactions_id"))
 						.build();
 			}
 			
@@ -66,14 +66,14 @@ public class DefaultSoldInventoryDao implements SoldInventoryDao {
 		
 	    params.sql = ""
 	    		+ "INSERT INTO sold_inventory ("
-		        + "inventory_id,Ebay_order_number,transaction_id"
+		        + "inventory_id,Ebay_order_number,transactions_id"
 		        + ") VALUES ("
-		        + ":inventory_id, :Ebay_order_number, :transaction_id)";
+		        + ":inventory_id, :Ebay_order_number, :transactions_id)";
 	    
 		//transactions_id
 	   params.source.addValue("inventory_id", inventoryId);	
 	   params.source.addValue("Ebay_order_number",EbayOrderNumber);
-	   params.source.addValue("transaction_id", transactionId);	
+	   params.source.addValue("transactions_id", transactionId);	
 	   
 	   
 	   
@@ -83,7 +83,7 @@ public class DefaultSoldInventoryDao implements SoldInventoryDao {
 				.orderId(keyHolder.getKey().intValue())   
 				.inventoryId(inventoryId)
 				.EbayOrderNumber(EbayOrderNumber)
-				.transactionId(transactionId)
+				.transactionsId(transactionId)
 				.build();
 	
 	}

@@ -30,21 +30,23 @@ public class DefaultCustomerDao implements CustomerDao{
 	@Autowired
 	private NamedParameterJdbcTemplate jdbcTemplate;
 	// crud Read the entire list of customers
-	
-	
+
+
 	@Override
 	public List<Customer> fetchAllCustomer() {
-	
+
 		String sql = "" 
 				+"SELECT *"
 				+"FROM customer";
-		
+
 		Map<String, Object> params = new HashMap<>();
-	
+
+
+
 		return jdbcTemplate.query(sql, params, new RowMapper<>() {
-	
-		
-			
+
+
+
 			@Override
 			// maps the columns name to the variable in the customer table
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -54,78 +56,78 @@ public class DefaultCustomerDao implements CustomerDao{
 						.customerId(rs.getInt("customer_id"))
 						.EbayUsername(rs.getString("ebay_username"))
 						.build();
-				
+
 			}});
-		
+
 	}
 	//////////////// creates a new method
 	@Override
-public Customer createCustomer(String Ebay_username) {
+public Customer createCustomer(String EbayUsername) {
 		SqlParams params = new SqlParams();
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		params.sql = ""
-			+ "INSERT into customer"
-			+ "(Ebay_username)"
+			+ "INSERT into customer "
+			+ "(Ebay_username) "
 		    + "VALUES (:Ebay_username)"; 
-	   params.source.addValue("Ebay_username", Ebay_username);
-	   
+	   params.source.addValue("Ebay_username", EbayUsername);
+
 	   jdbcTemplate.update(params.sql, params.source, keyHolder);
 		return Customer.builder()
 				//.customerId(KeyHolder.getKey().intValue())
-				.EbayUsername(Ebay_username)
+				.customerId(keyHolder.getKey().intValue())
+				.EbayUsername(EbayUsername)
 				.build();
-	
+
 	}
-	
+
 	class SqlParams {
-		
+
 		String sql;
 		MapSqlParameterSource source = new MapSqlParameterSource();
 	}
-	
+
 	@Override
 	// update existing customer @ database
-	
+
 	public Customer updateCustomer(int customerId, String updatedCustomer) {
 		String sql = ""
-				+ "UPDATE customer"
+				+ "UPDATE customer "
 				+" SET "
-				+"Ebay_username = :Ebay_username "
+				//+"customer_id = :customer_id,"
+				+"Ebay_username = :Ebay_username"
 				+"WHERE customer_id = :customer_id ";
-		
-		
+
+
 		// is my Ebay_username correct ????????????????????????????????????????????????????
 		Map<String, Object> params = new HashMap<>();
 		params.put("Ebay_username", updatedCustomer);
 		params.put("customer_id", customerId);
 		////////////////////////
 		//////     is my sql string Ebay corrct?????????????????????????????????????????????????????????????????????
-		
+
 		if (jdbcTemplate.update(sql,params) == 0) {
 			throw new NoSuchElementException("failed to update customer");
 		}
 		return Customer.builder()	
-			//	.customerId(customerId)
+				.customerId(customerId)
 				.EbayUsername(updatedCustomer)
 				.build();
 	}
-	
-	
+
+
 	@Override
 	public void deleteCustomer(int deleteId) {
 		String sql = ""
-				+ "DELETE FROM customer "
-				+ "WHERE customer_id = :customer_id";
-			
+				+ "DELETE FROM customers "
+				+ "WHERE customer_id = :customer_id;";
+
 			Map<String, Object> params = new HashMap<>();
-			
+
 			params.put("customer_id", deleteId);
 			if (jdbcTemplate.update(sql, params) == 0) throw new NoSuchElementException();
-	
+
 	}
-	
-	
+
+
 
 }
-
-

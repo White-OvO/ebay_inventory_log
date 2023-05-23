@@ -17,12 +17,15 @@ public interface TransactionsService {
 
 
 
-	void deleteTransaction(int transactionsId);
+	void deleteTransactions(int transactionsId);
 
 
 
 	public Transactions createTransactions(int customerId, String dateSold,int buyerPaid, int taxesPerTransaction,
 			int shippingCost, int sellerFee);
+
+
+
 
 
 }

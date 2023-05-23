@@ -56,7 +56,7 @@ public class DefaultTransactionsDao implements TransactionsDao{
 			@Override
 			public Transactions mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return Transactions.builder()
-					//	.transactionsId(rs.getInt("transaction_id"))
+						.transactionsId(rs.getInt("transactions_id"))
 						.customerId(rs.getInt("customer_id"))
 						.dateSold(rs.getString("date_sold"))
 						.buyerPaid(rs.getInt("buyer_paid"))
@@ -79,7 +79,7 @@ public class DefaultTransactionsDao implements TransactionsDao{
 	
 	//params.sql = ""
 			
-log.debug("DAO: customer_id={}, date_sold={}, buyer_paid={}, taxes_per_transactions={}, shipping_cost={}, seller_fee={}",
+log.debug("DAO: customer_id={}, date_sold={}, buyer_paid={}, taxes_per_transaction={}, shipping_cost={}, seller_fee={}",
 					customerId, dateSold, dateSold, taxesPerTransaction, shippingCost, sellerFee);
 //		
 		params.sql = ""
@@ -99,7 +99,7 @@ log.debug("DAO: customer_id={}, date_sold={}, buyer_paid={}, taxes_per_transacti
 		   
 			   jdbcTemplate.update(params.sql, params.source, keyHolder);
 					return Transactions.builder()
-						//	.transactions_id(keyHolder.getKey().intValue())
+							.transactionsId(keyHolder.getKey().intValue())
 							.customerId(customerId)
 							.dateSold(dateSold)
 							.buyerPaid(buyerPaid)
@@ -121,15 +121,15 @@ log.debug("DAO: customer_id={}, date_sold={}, buyer_paid={}, taxes_per_transacti
 		
 		
 			@Override
-	public void deleteTransations(int transactionsId) {
+	public void deleteTransactions(int transactionsId) {
 		String sql = ""
-				+ "DELETE FROM transacations"
+				+ "DELETE FROM transactions "
 				+ "WHERE transactions_id = :transactions_id";
 			
 			Map<String, Object> params = new HashMap<>();
 			
 			params.put("transactions_id", transactionsId);
-			if (jdbcTemplate.update(sql, params) == 0) throw new NoSuchElementException();
+			 jdbcTemplate.update(sql, params);// == 0) throw new NoSuchElementException();
 
 	}
 

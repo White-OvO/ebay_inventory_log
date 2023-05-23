@@ -93,14 +93,16 @@ public interface CustomerController {
 							responseCode = "500",
 							description = "An unplanned error occured.",
 							content = @Content(mediaType = "application/json")),
-			},
+			}
 			
-			parameters = {
-					@Parameter(name = "EbayUser name input for new customer-name",
-							allowEmptyValue = false,
-							required = false,
-							description = "The customers local Ebay-name"),
-									}
+			//,
+//			
+//			parameters = {
+//					@Parameter(name = "EbayUser name input for new customer-name",
+//							allowEmptyValue = false,
+//							required = false,
+//							description = "The customers local Ebay-name"),
+//									}
 		)
 	@PostMapping("/createcustomer")
 	@ResponseStatus(code = HttpStatus.CREATED)

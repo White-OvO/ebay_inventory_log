@@ -13,5 +13,5 @@ public class SoldInventory {
 private int orderId;
 private int inventoryId;
 private int EbayOrderNumber;
-private int transactionId;
+private int transactionsId;
 }

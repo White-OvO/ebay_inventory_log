@@ -38,7 +38,7 @@ shippingCost, sellerFee);
 	@Override
 	public void deleteTransactions(int transactionsId) {
 		log.debug("transactionsId={}", transactionsId);
-		transactionsService.deleteTransaction(transactionsId);
+		transactionsService.deleteTransactions(transactionsId);
 
 	}
 }

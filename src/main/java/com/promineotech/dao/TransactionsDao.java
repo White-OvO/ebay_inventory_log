@@ -18,7 +18,9 @@ public interface TransactionsDao {
 	
 	
 	
-	public void deleteTransations(int transactionsId);
+	public void deleteTransactions(int transactionsId);
+
+
 
 
 

@@ -38,9 +38,9 @@ public class DefaultTransactionsService implements TransactionsService {
 	}
 	
 	@Override
-	public void deleteTransaction(int transactionsId) {
+	public void deleteTransactions(int transactionsId) {
 		log.info("delete method was approved", transactionsId);
-		transactionsDao.deleteTransations(transactionsId);		
+		transactionsDao.deleteTransactions(transactionsId);		
 	}
 
 	
