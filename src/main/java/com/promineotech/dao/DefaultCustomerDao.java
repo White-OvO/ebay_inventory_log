@@ -94,7 +94,7 @@ public Customer createCustomer(String EbayUsername) {
 				+ "UPDATE customer "
 				+" SET "
 				//+"customer_id = :customer_id,"
-				+"Ebay_username = :Ebay_username"
+				+"Ebay_username = :Ebay_username "
 				+"WHERE customer_id = :customer_id ";
 
 
@@ -118,14 +118,14 @@ public Customer createCustomer(String EbayUsername) {
 	@Override
 	public void deleteCustomer(int deleteId) {
 		String sql = ""
-				+ "DELETE FROM customers "
-				+ "WHERE customer_id = :customer_id;";
+				+ "DELETE FROM customer "
+				+ "WHERE customer_id = :customer_id";
 
 			Map<String, Object> params = new HashMap<>();
 
 			params.put("customer_id", deleteId);
-			if (jdbcTemplate.update(sql, params) == 0) throw new NoSuchElementException();
-
+		//	if (jdbcTemplate.update(sql, params) == 0) throw new NoSuchElementException();
+			jdbcTemplate.update(sql, params);
 	}
 
 

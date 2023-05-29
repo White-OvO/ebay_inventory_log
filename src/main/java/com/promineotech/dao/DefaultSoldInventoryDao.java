@@ -57,12 +57,12 @@ public class DefaultSoldInventoryDao implements SoldInventoryDao {
 		});
 	}
 	@Override
-	public SoldInventory createSoldInventory(int inventoryId,int EbayOrderNumber, int transactionId) {
+	public SoldInventory createSoldInventory(int inventoryId,int EbayOrderNumber, int transactionsId) {
 		SqlParams params = new SqlParams();
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		
 		log.debug("DAO: inventory_id={},Ebay_order_number={},transactions_id={}",
-		        inventoryId,EbayOrderNumber, transactionId);
+		        inventoryId,EbayOrderNumber, transactionsId);
 		
 	    params.sql = ""
 	    		+ "INSERT INTO sold_inventory ("
@@ -73,7 +73,7 @@ public class DefaultSoldInventoryDao implements SoldInventoryDao {
 		//transactions_id
 	   params.source.addValue("inventory_id", inventoryId);	
 	   params.source.addValue("Ebay_order_number",EbayOrderNumber);
-	   params.source.addValue("transactions_id", transactionId);	
+	   params.source.addValue("transactions_id", transactionsId);	
 	   
 	   
 	   
@@ -83,7 +83,7 @@ public class DefaultSoldInventoryDao implements SoldInventoryDao {
 				.orderId(keyHolder.getKey().intValue())   
 				.inventoryId(inventoryId)
 				.EbayOrderNumber(EbayOrderNumber)
-				.transactionsId(transactionId)
+				.transactionsId(transactionsId)
 				.build();
 	
 	}
