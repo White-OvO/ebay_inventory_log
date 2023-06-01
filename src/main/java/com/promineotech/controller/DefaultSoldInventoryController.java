@@ -31,8 +31,8 @@ public class DefaultSoldInventoryController implements SoldInventoryController{
 	
 	
 	@Override
-	public SoldInventory soldInventory(int soldInventory,int EbayOrderNumber, int transactionsId) {
-		return soldInventoryService.createSoldInventory(soldInventory,EbayOrderNumber, transactionsId);
+	public SoldInventory soldInventory(int InventoryId,int EbayOrderNumber, int transactionsId) {
+		return soldInventoryService.createSoldInventory(InventoryId,EbayOrderNumber, transactionsId);
 	
 	
 	
