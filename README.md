@@ -1,7 +1,7 @@
 ﻿# ebay_inventory_log
 ﻿# eBAY_Inventory_for_Dummies
  ##
-<div align="center">
+
 	<h1>Welcome to my Ebay client application Github !</h1>
 	<div>EbayClient</div>
 	<br />
