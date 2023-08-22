@@ -82,3 +82,21 @@ Schema
 <img width="638" alt="Screenshot 2023-05-22 215628" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/a9f0efcc-a31e-463a-be6e-b6b30da57592">
 
 
+<h1 style="background-color:DodgerBlue;"> Transactions </h1>
+<img width="636" alt="Screenshot 2023-05-22 220140" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/8eccb195-71e1-4357-939a-624eeb8bfc56">
+
+<img width="638" alt="Screenshot 2023-05-22 220201" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/2cc200ef-1bb1-4524-a206-252e8171d250">
+
+<img width="634" alt="Screenshot 2023-05-22 220249" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/32db1ca3-eb2b-4c42-84e4-f7baaca766fd">
+
+<img width="636" alt="Screenshot 2023-05-22 220319" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/272e1a6f-753b-4ece-b31f-185fd21d5e6e">
+
+
+<h1 style="background-color:DodgerBlue;"> SoldInventory </h1>
+
+
+<img width="638" alt="Screenshot 2023-05-22 222430" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/836497b6-8aba-4382-8045-6b16e25a766b">
+
+<img width="636" alt="Screenshot 2023-05-22 222535" src="https://github.com/White-OvO/ebay_inventory_log/assets/120700219/f9aa6322-2b71-48a3-a839-2cbadc6bba36">
+
+
